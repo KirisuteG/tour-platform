@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Contact Form</h1>
+<form action="" method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.subject.label }}<br>
+    {{ form.subject }}<br>
+    {% for error in form.subject.errors %}
+    <span style="color: red;">[{{ error }}]</span> <br>
+    {% endfor %}
+    <br>
+
+    <div class="">
+        {{ form.message.label }} <br>
+        {{ form.message(size=500) }} <br>
+        {% for error in form.message.errors %}
+        <span style="color: red;">[{{ error }}]</span> <br>
+        {% endfor %}
+    </div>
+    {{ form.submit()  }}
+</form>
+{% endblock %}
