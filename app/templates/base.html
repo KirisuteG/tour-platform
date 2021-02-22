@@ -2,23 +2,24 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/yeti/bootstrap.min.css" integrity="sha384-mLBxp+1RMvmQmXOjBzRjqqr0dP9VHU2tb3FK6VB0fJN/AOu7/y+CAeYeWJZ4b3ii" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
         {% if title %}
         <title>{{ title }} - Tour App</title>
         {% else %}
         <title>Tour App</title>
         {% endif %}
     </head>
-    <body>
-        <div>
+    <body class="container p-4">
+        <div >
             Tour App:
-            <a href="{{ url_for('index') }}">Home</a>
-            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ url_for('index') }}" class="headers">Home</a>
+            <a href="{{ url_for('contact') }}" class="headers">Contact</a>
             {% if current_user.is_anonymous %}
-            <a href="{{ url_for('login') }}">Login</a>
-            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('login') }}" class="headers">Login</a>
+            <a href="{{ url_for('register') }}" class="headers">Register</a>
             {% else %}
-            <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
-            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href="{{ url_for('user', username=current_user.username) }}" class="headers">Profile</a>
+            <a href="{{ url_for('logout') }}" class="headers">Logout</a>
             {% endif %}
         </div>
         <hr>
