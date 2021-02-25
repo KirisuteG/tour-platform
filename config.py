@@ -15,4 +15,4 @@ class Config(object):
     MAIL_USE_SSL = True
     MAIL_USERNAME = 'sanbotsanautos@gmail.com'
     MAIL_PASSWORD = 'pjicwguqbbkenotw'
-    ADMINS = ['calvihe@gmail.com'] 
+    ADMINS = ['calvihe@gmail.com','sergio20100@hotmail.com'] 
